@@ -6,6 +6,7 @@ const app = express();
 require("dotenv").config();
 
 app.listen(process.env.PORT_PC, ()=>
+    //Estructura string template
     console.log(`Connect on the PORT_PC ${process.env.PORT_PC}`)
 );
 
@@ -18,6 +19,11 @@ mongoClient.
     }).then(()=> console.log("Success connection")).
     catch((err)=> console.log(err));
 
+/**
+ * Se utiliza para configurar la aplicación de Express para que use el middleware express.json(), que 
+ * se encarga de parsear el cuerpo de la solicitud HTTP que contiene datos en formato JSON y convertirlos
+ * en un objeto JavaScript. 
+ */
 app.use(express.json());
 routes_system(app);
 
